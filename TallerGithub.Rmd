@@ -1,0 +1,90 @@
+---
+title: "Taller de GitHub y Control de Versiones"
+subtitle: "Taller de GitHub - Laboratorio de Interacciones Ecológicas y Conservación"
+output: html_notebook
+format:
+  revealjs:
+    scrollable: true
+    smaller: true
+---  
+
+# ¿Qué es Git y GitHub?
+
+## **GitHub**
+**GitHub** es una plataforma en la nube que aloja repositorios de código (públicos o privados), imágenes, certificados e incluso CVs. Pero lo más interesante es que permite que varias personas trabajen en un mismo proyecto de forma ordenada, por ejemplo, colaborando en el código de un paper.  
+
+Algunos repositorios interesantes:
+- [Grupo de I. Bartomeus](https://github.com/ibartomeus)
+- [Grupo Weecology](https://github.com/weecology)
+- [Radical Community Ecology](https://github.com/RadicalCommEcol)
+- [Repositorio personal](https://github.com/VicMarquez)
+
+## **Git**
+**Git** es un sistema que permite rastrear cambios en archivos de código, facilitando la colaboración y la recuperación de versiones anteriores. GitHub sirve como interfaz para visualizar y almacenar estos cambios.
+
+Un **repositorio en GitHub** es, básicamente, una carpeta que contiene todos los archivos de un proyecto (código, base de datos, README, etc.) junto con el historial de cambios. Estos repositorios pueden ser **públicos o privados** y pueden compartirse con colaboradores.
+
+Cuando trabajamos con GitHub, siempre manejamos una **carpeta local** (en nuestra computadora) y una **carpeta remota** (en GitHub). Trabajamos localmente, enviamos los cambios (**push**) al control remoto y traemos (**pull**) los cambios hechos por otros.
+
+---
+
+# Comandos principales
+
+![](git_workflow.png)
+
+### **git pull**
+Sincroniza el repositorio local con las actualizaciones del repositorio remoto en GitHub, incorporando los cambios realizados por el equipo.
+
+### **git status**
+Muestra el estado actual del repositorio: cambios locales, rama activa y otros detalles relevantes.
+
+### **git add + git commit + git push**
+Estos comandos permiten cargar cambios locales al repositorio:
+
+- **git add**: Agrega archivos modificados o nuevos al área de preparación (*staging area*).
+- **git commit -m "Mensaje descriptivo"**: Guarda los cambios en el historial de versiones con un mensaje explicativo.
+- **git push**: Envía los cambios confirmados al repositorio remoto en GitHub.
+
+---
+
+# Configuración de GitHub
+
+Para comenzar a usar GitHub:
+1. Crear una cuenta y verificar el correo: [Guía de inicio](https://docs.github.com/en/get-started/onboarding/getting-started-with-your-github-account).
+2. Instalar Git en nuestra computadora.
+3. Generar un **token de acceso personal** (PAT), necesario para autenticar nuestra identidad al interactuar con GitHub desde un dispositivo local: [Instrucciones](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens).
+4. Configurar Git con nuestro usuario y correo:
+   ```bash
+   git config --global user.name "Tu Nombre"
+   git config --global user.email "tu-email@ejemplo.com"
+   ```
+---
+
+# ¡Usando claves SSH!
+
+![](key.jpg)
+
+Para evitar tener que ingresar usuario y contraseña cada vez que interactuamos con GitHub, podemos configurar una **clave SSH**.
+
+### **Generar una clave SSH**
+Ejecutar en la terminal:
+```bash
+ssh-keygen -t ed25519 -C "tu-email@ejemplo.com"
+```
+O, si es necesario usar RSA:
+```bash
+ssh-keygen -t rsa -b 4096 -C "tu-email@ejemplo.com"
+```
+Al ejecutar el comando:
+- Pedirá elegir una ubicación para guardar la clave. Presionar *Enter* para aceptar la ubicación por defecto (~/.ssh/id_ed25519).
+- Puede solicitar una contraseña opcional (puede dejarse vacía o agregar por seguridad).
+
+### **Agregar la clave SSH a GitHub**
+1. Ir a **Settings** > **SSH and GPG keys**.
+2. Clic en **New SSH key**.
+3. Poner un nombre descriptivo (ej. "Mi PC RStudio").
+4. Pegar la clave copiada en el campo "Key".
+5. Hacer clic en **Add SSH key**.
+
+Ahora, GitHub ya reconocerá tu dispositivo sin necesidad de ingresar credenciales cada vez que uses Git.
+
