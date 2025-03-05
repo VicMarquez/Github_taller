@@ -1,7 +1,9 @@
 ---
 title: "Taller de GitHub y Control de Versiones"
 subtitle: "Taller de GitHub - Laboratorio de Interacciones Ecológicas y Conservación"
-output: html_notebook
+output:
+  html_document:
+    df_print: paged
 format:
   revealjs:
     scrollable: true
@@ -20,7 +22,8 @@ Algunos repositorios interesantes:
 - [Repositorio personal](https://github.com/VicMarquez)
 
 ## **Git**
-**Git** Git es el sistema de control de versiones que permite las herramientas colaborativas disponibles en GitHub. Git fue desarrollado inicialmente como un sistema rápido, ligero y de código abierto para permitir a los ingenieros de software desarrollar y colaborar en proyectos de manera eficiente.
+
+**Git** Git es el sistema de control de versiones que permite las herramientas colaborativas disponibles en GitHub. Fue desarrollado inicialmente como un sistema rápido, ligero y de código abierto para permitir a los ingenieros de software desarrollar y colaborar en proyectos de manera eficiente.
 
 Un **repositorio en GitHub** es, básicamente, una carpeta que contiene todos los archivos de un proyecto (código, base de datos, README, etc.) junto con el historial de cambios. Estos repositorios pueden ser **públicos o privados** y pueden compartirse con colaboradores.
 
@@ -90,30 +93,30 @@ Ahora, GitHub ya reconocerá tu dispositivo sin necesidad de ingresar credenciale
 
 ### **Uso de Github en Ecología**
 
-investigación más reproducible y colaborativa! 
+Investigación más reproducible y colaborativa! 
 
 Ejemplos de como Github puede contribuir a las invetigaciones en Ecología:
 
-Storing and sharing research compendia.
+1. Storing and sharing research compendia.
 
 An research compendium includes all computational materials related to research production, including data, code for analyses and protocols
 
 GitHub allows administrative control over who can view and modify repositories, and the process of
 cloning, forking and suggesting changes through pull requests ensures code owners have full control over code and documents.
 
-Proyect continuity
+2. Proyect continuity
 
 Research code and data management upkeep tends to fall off as researchers move on to new
 projects or other institutions. Also, code and data can be difficult to access and recover when kept only on personal devices
 
-Peer review
+3. Peer review
 
 GitHub provides an open and transparent platform that can be used for either directly providing feedback on research products or addressing changes recommended by reviewers. GitHub Issues
 can be used to organize and discuss reviewer suggestions and to assign them to co-authors
 (https://github.com/SORTEE-Github-Hackathon/manuscript/issues?q=label%3A%22Reviewer+Comment%22).
 
 
-Collaborative and asynchronous code editing
+4. Collaborative and asynchronous code editing
 
 Version control allows researchers to make changes in code or documents without worrying about irreparably modifying someone else's work.
 
